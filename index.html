@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College HelpBot</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            backdrop-filter: blur(4px);
+        }
+    </style>
+
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <div class="w-full max-w-md bg-white shadow-2xl rounded-xl p-6 space-y-4" id="chatbot">
+        <h2 class="text-2xl font-bold text-center text-indigo-600">🎓 College HelpBot</h2>
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" class="w-16 h-16 mx-auto mb-2"
+            alt="Bot Icon" />
+        <div class="space-y-2 animate__animated animate__fadeIn" id="chatWindow"></div>
+
+        <div class="flex items-center gap-2 mt-4">
+            <button onclick="startVoice()" id="micBtn"
+                class="bg-gray-100 text-gray-700 p-2 rounded-full shadow hover:scale-105 transition-all duration-200"
+                title="Voice Input">
+                <span id="micIcon">🎤</span>
+            </button>
+            <p id="voiceWarning" class="text-sm text-red-500 hidden mt-1">Your browser does not support voice input.</p>
+            <input id="userInput" type="text" placeholder="Ask me something..."
+                class="flex-1 px-4 py-2 rounded-full border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 transition-all duration-200" />
+
+            <button onclick="handleUserInput()"
+                class="bg-indigo-600 text-white px-4 py-2 rounded-full shadow hover:bg-indigo-700 hover:scale-105 transition-all duration-200"
+                title="Send">
+                ➤
+            </button>
+
+            <button onclick="clearChat()"
+                class="bg-red-500 text-white p-2 rounded-full shadow hover:bg-red-600 hover:scale-105 transition-all duration-200"
+                title="Clear Chat">
+                🗑️
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
